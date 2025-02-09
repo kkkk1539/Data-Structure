@@ -131,6 +131,6 @@
      n4->next = n5;
      n5->next = NULL;
     /* printf("%d", middleNode(n1)->val);*/
-     //reverseList(n1);
+     reverseList(n1);
      return 0;
  }
