@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="0210.cpp" />
     <ClCompile Include="LinkList.cpp" />
     <ClCompile Include="LinkList.h" />
     <ClCompile Include="SList.cpp" />
