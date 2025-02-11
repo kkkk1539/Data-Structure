@@ -36,5 +36,11 @@
     <ClCompile Include="0210.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DCListNode.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DCListNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

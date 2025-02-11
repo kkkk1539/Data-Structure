@@ -61,6 +61,6 @@ int main() {
     n4->next = NULL;
     //n5->next = NULL;
     //partition(n1, 5);
-    isPalindrome(n1);
+    //isPalindrome(n1);
     return 0;
 }
