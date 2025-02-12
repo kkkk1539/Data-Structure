@@ -128,12 +128,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="0210.cpp" />
+    <ClCompile Include="0211.cpp" />
+    <ClCompile Include="0212.cpp" />
     <ClCompile Include="DCListNode.h" />
     <ClCompile Include="DCListNode.cpp" />
     <ClCompile Include="LinkList.cpp" />
     <ClCompile Include="LinkList.h" />
+    <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="Queue.h" />
     <ClCompile Include="SList.cpp" />
     <ClCompile Include="SList.h" />
+    <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="Stack.h" />
     <ClCompile Include="test_oj.cpp" />
     <ClCompile Include="test_sl.cpp" />
   </ItemGroup>

@@ -32,7 +32,6 @@ void ListDestory(DCListNode* pHead) {
 		cur = next;
 	}
 	free(pHead);
-	pHead = NULL;
 }
 
 void ListPrint(DCListNode* pHead) {
@@ -77,7 +76,6 @@ void ListPopBack(DCListNode* phead) {
 	tail->_prev->_next = phead;
 	phead->_prev = tail->_prev;
 	free(tail);
-	tail = NULL;
 }
 
 void ListPopFront(DCListNode* phead) {
@@ -88,7 +86,6 @@ void ListPopFront(DCListNode* phead) {
 	head->_next->_prev = phead;
 	phead->_next = head->_next;
 	free(head);
-	head = NULL;
 }
 
 DCListNode* ListFind(DCListNode* phead, DCLDataType x) {
@@ -129,5 +126,4 @@ void ListErase(DCListNode* pos) {
 	pos->_prev->_next = pos->_next;
 	pos->_next->_prev = tmp;
 	free(pos);
-	pos = NULL;
 }
