@@ -20,6 +20,7 @@ void QueueDestory(Queue* pq) {
 }
 
 void QueuePush(Queue* pq, QueueDataType x) {
+	assert(pq);
 	QueueNode* newNode = (QueueNode*)malloc(sizeof(QueueNode));
 	if (newNode == NULL) {
 		perror("QueuePush::malloc");
@@ -51,13 +52,13 @@ void QueuePop(Queue* pq) {
 
 int QueueSize(Queue* pq) {
 	assert(pq);
-	QueueNode* cur = pq->head;
+	/*QueueNode* cur = pq->head;
 	int size = 0;
 	while (cur) {
 		cur = cur->next;
 		size++;
-	}
-	return size;
+	}*/
+	return pq->size;
 }
 
 bool QueueEmpty(Queue* pq) {
