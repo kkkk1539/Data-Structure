@@ -131,8 +131,10 @@
     <ClCompile Include="0211.cpp" />
     <ClCompile Include="0212.cpp" />
     <ClCompile Include="0213.cpp" />
+    <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="DCListNode.h" />
     <ClCompile Include="DCListNode.cpp" />
+    <ClCompile Include="Heap.cpp" />
     <ClCompile Include="LinkList.cpp" />
     <ClCompile Include="LinkList.h" />
     <ClCompile Include="Queue.cpp" />
@@ -141,8 +143,13 @@
     <ClCompile Include="SList.h" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Stack.h" />
+    <ClCompile Include="test_hp.cpp" />
     <ClCompile Include="test_oj.cpp" />
     <ClCompile Include="test_sl.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="Heap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

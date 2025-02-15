@@ -42,25 +42,25 @@ struct  ListNode* partition(ListNode* pHead, int x) {
 //    return true;
 //}
 
-int main() {
-    struct ListNode* n1 = (struct ListNode*)malloc(sizeof(struct ListNode));
-    struct ListNode* n2 = (struct ListNode*)malloc(sizeof(struct ListNode));
-    struct ListNode* n3 = (struct ListNode*)malloc(sizeof(struct ListNode));
-    struct ListNode* n4 = (struct ListNode*)malloc(sizeof(struct ListNode));
-    //struct ListNode* n5 = (struct ListNode*)malloc(sizeof(struct ListNode));
-
-    n1->val = 1;
-    n2->val = 1;
-    n3->val = 2;
-    n4->val = 1;
-    //n5->val = 5;
-
-    n1->next = n2;
-    n2->next = n3;
-    n3->next = n4;
-    n4->next = NULL;
-    //n5->next = NULL;
-    //partition(n1, 5);
-    //isPalindrome(n1);
-    return 0;
-}
+//int main() {
+//    struct ListNode* n1 = (struct ListNode*)malloc(sizeof(struct ListNode));
+//    struct ListNode* n2 = (struct ListNode*)malloc(sizeof(struct ListNode));
+//    struct ListNode* n3 = (struct ListNode*)malloc(sizeof(struct ListNode));
+//    struct ListNode* n4 = (struct ListNode*)malloc(sizeof(struct ListNode));
+//    //struct ListNode* n5 = (struct ListNode*)malloc(sizeof(struct ListNode));
+//
+//    n1->val = 1;
+//    n2->val = 1;
+//    n3->val = 2;
+//    n4->val = 1;
+//    //n5->val = 5;
+//
+//    n1->next = n2;
+//    n2->next = n3;
+//    n3->next = n4;
+//    n4->next = NULL;
+//    //n5->next = NULL;
+//    //partition(n1, 5);
+//    //isPalindrome(n1);
+//    return 0;
+//}
