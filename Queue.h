@@ -1,9 +1,10 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+#pragma once
 
 #include<stdio.h>
 #include<assert.h>
 #include<stdlib.h>
-typedef int QueueDataType;
+
+typedef struct BinaryTreeNode* QueueDataType;
 
 
 typedef struct QueueNode {

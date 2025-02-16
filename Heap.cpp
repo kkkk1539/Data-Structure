@@ -81,7 +81,7 @@ void HeapPop(Heap* php) {
 
 HPDataType HeapTop(Heap* php) {
 	assert(php);
-	assert(!HeapEmpty);
+	assert(!HeapEmpty(php)); //同学这里是要给函数调用 
 	return php->_data[0];
 }
 

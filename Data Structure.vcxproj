@@ -131,6 +131,7 @@
     <ClCompile Include="0211.cpp" />
     <ClCompile Include="0212.cpp" />
     <ClCompile Include="0213.cpp" />
+    <ClCompile Include="0216.cpp" />
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="DCListNode.h" />
     <ClCompile Include="DCListNode.cpp" />
@@ -140,9 +141,10 @@
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Queue.h" />
     <ClCompile Include="SList.cpp" />
-    <ClCompile Include="SList.h" />
+    <ClInclude Include="SList.h" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Stack.h" />
+    <ClCompile Include="test_bt.cpp" />
     <ClCompile Include="test_hp.cpp" />
     <ClCompile Include="test_oj.cpp" />
     <ClCompile Include="test_sl.cpp" />

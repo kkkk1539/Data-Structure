@@ -1,3 +1,4 @@
+#pragma once //防止多次展开 还有就是文件创建的时候你选择的模板是.cpp不是.h导致的
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
