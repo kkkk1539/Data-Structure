@@ -75,6 +75,12 @@
     <ClCompile Include="0216.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Sort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test_sort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Heap.h">
@@ -84,6 +90,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="SList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

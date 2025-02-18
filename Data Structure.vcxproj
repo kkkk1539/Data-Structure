@@ -141,13 +141,16 @@
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Queue.h" />
     <ClCompile Include="SList.cpp" />
+    <ClCompile Include="test_sort.cpp" />
     <ClInclude Include="SList.h" />
+    <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Stack.h" />
     <ClCompile Include="test_bt.cpp" />
     <ClCompile Include="test_hp.cpp" />
     <ClCompile Include="test_oj.cpp" />
     <ClCompile Include="test_sl.cpp" />
+    <ClInclude Include="Sort.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinaryTree.h" />

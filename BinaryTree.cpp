@@ -108,3 +108,32 @@ void BinaryTreeLevelOrder(BTNode* root) {
     }
     QueueDestory(&q);
 }
+
+bool BinaryTreeComplete(BTNode* root) {
+    Queue q;
+    QueueInit(&q);
+    if (root) {
+        QueuePush(&q, root);
+    }
+    while (!QueueEmpty(&q)) {
+        BTNode* front = QueueFront(&q);
+        QueuePop(&q);
+        if (front) {
+            QueuePush(&q, front->_left);
+            QueuePush(&q, front->_right);
+        }
+        else {
+            break;
+        }
+    }
+    while (!QueueEmpty(&q)) {
+        BTNode* front = QueueFront(&q);
+        QueuePop(&q);
+        if (front) {
+            QueueDestory(&q);
+            return false;
+        }
+    }
+    QueueDestory(&q);
+    return true;
+}
