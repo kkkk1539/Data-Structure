@@ -13,8 +13,40 @@ void testshell() {
 	ShellSort(a, sz);
 	PrintArray(a, sz);
 }
+
+void testselect() {
+	int a[] = { 1,8,8,5,3,8,9 };
+	int sz = sizeof(a) / sizeof(int);
+	SelectSort(a, sz);
+	PrintArray(a, sz);
+}
+
+void testheap() {
+	int a[] = { 1,43,53,5,351,21,352,56,36 };
+	int sz = sizeof(a) / sizeof(int);
+	HeapSort(a, sz);
+	PrintArray(a, sz);
+}
+
+void testbubble() {
+	int a[] = { 9,8,7,6,5,4,3,2,1,0 };
+	int sz = sizeof(a) / sizeof(int);
+	BubbleSort(a, sz);
+	PrintArray(a, sz);
+}
+
+void testquick() {
+	int a[] = {9,8,7,6,5,4,3,2,1,0 };
+	int sz = sizeof(a) / sizeof(int);
+	QuickSort(a, 0, sz - 1);
+	PrintArray(a, sz);
+}
 int main() {
 	testinsert();
 	testshell();
+	testselect();
+	testheap();
+	testbubble();
+	testquick();
 	return 0;
 }
