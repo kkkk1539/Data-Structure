@@ -36,7 +36,7 @@ void testbubble() {
 }
 
 void testquick() {
-	int a[] = {9,8,7,6,5,4,3,2,1,0 };
+	int a[] = {3,1,3,2 };
 	int sz = sizeof(a) / sizeof(int);
 	QuickSort(a, 0, sz - 1);
 	PrintArray(a, sz);

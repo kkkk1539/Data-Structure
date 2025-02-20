@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#include"DCListNode.h"
+#include"DCList.h"
 DCListNode* BuyListNode(DCLDataType x) {
 	DCListNode* newNode = (DCListNode*)malloc(sizeof(DCListNode));
 	if (newNode == NULL) {

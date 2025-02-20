@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"Sort.h"
+#include"Stack.h"
 extern void swap(int*, int*);
 void PrintArray(int* a, int n) {
 	assert(a);
@@ -137,6 +138,7 @@ int getmidnum(int* a, int left, int right) {
 		}
 	}
 }
+
 int PartSort1(int* a, int left, int right) {
 	/*int randi = left + rand() % (right-left);
 	swap(&a[left], &a[randi]);*/
@@ -195,8 +197,72 @@ void QuickSort(int* a, int left, int right) {
 	if (left >= right) {
 		return;
 	}
-	int keyi = PartSort3(a, left, right);
-	QuickSort(a, left, keyi - 1);
-	QuickSort(a, keyi + 1, right);
+	if (right - left + 1 > 10) {
+		int keyi = PartSort1(a, left, right);
+		QuickSort(a, left, keyi - 1);
+		QuickSort(a, keyi + 1, right);
+	}
+	else {
+		InsertSort(a + left, right - left + 1);
+	}
 }
 
+void QuickSortNonR(int* a, int left, int right) {
+	Stack st;
+	STInit(&st);
+	STPush(&st, left);
+	STPush(&st, right);
+	while (!IsEmpty(&st)) {
+		int end = STTop(&st);
+		STPop(&st);
+		int start = STTop(&st);
+		STPop(&st);
+		int keyi = PartSort3(a, start, end);
+		if (keyi + 1 < end) {
+			STPush(&st, keyi + 1);
+			STPush(&st, end);
+		}
+		if (start < keyi - 1) {
+			STPush(&st, start);
+			STPush(&st, keyi - 1);
+		}
+	}
+	STDestory(&st);
+}
+
+void _MergeSort(int* a, int left,int right,int* tmp) {
+	if (left >= right) {
+		return;
+	}
+	int mid = left + (right - left) / 2;
+	_MergeSort(a, left, mid, tmp);
+	_MergeSort(a, mid + 1, right, tmp);
+	int begin1 = left, end1 = mid;
+	int begin2 = mid + 1, end2 = right;
+	int i = left;
+	while (begin1 <= end1 && begin2 <= end2) {
+		if (a[begin1] < a[begin2]) {
+			tmp[i++] = a[begin1++];
+		}
+		else {
+			tmp[i++] = a[begin2++];
+		}
+	}
+	while (begin1 <= end1) {
+		tmp[i++] = a[begin1++];
+	}
+	while (begin2 <= end2) {
+		tmp[i++] = a[begin2++];
+	}
+	memcpy(a + left, tmp + left, (right - left + 1)*sizeof(int));
+}
+
+void MergeSort(int* a, int n) {
+	int* tmp = (int*)malloc(sizeof(int) * n);
+	if (tmp == NULL) {
+		perror("malloc failed");
+		return;
+	}
+	_MergeSort(a, 0, n - 1, tmp);
+	free(tmp);
+}

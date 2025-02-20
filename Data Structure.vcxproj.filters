@@ -33,10 +33,10 @@
     <ClCompile Include="0210.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="DCListNode.h">
+    <ClCompile Include="DCList.h">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="DCListNode.cpp">
+    <ClCompile Include="DCList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="0211.cpp">

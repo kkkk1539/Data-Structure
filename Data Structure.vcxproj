@@ -133,8 +133,8 @@
     <ClCompile Include="0213.cpp" />
     <ClCompile Include="0216.cpp" />
     <ClCompile Include="BinaryTree.cpp" />
-    <ClCompile Include="DCListNode.h" />
-    <ClCompile Include="DCListNode.cpp" />
+    <ClCompile Include="DCList.h" />
+    <ClCompile Include="DCList.cpp" />
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="LinkList.cpp" />
     <ClCompile Include="LinkList.h" />
