@@ -41,6 +41,20 @@ void testquick() {
 	QuickSort(a, 0, sz - 1);
 	PrintArray(a, sz);
 }
+
+void testquicknonr() {
+	int a[] = { 9,6,4,23,2,3,1,7,3 };
+	int sz = sizeof(a) / sizeof(int);
+	QuickSortNonR(a, 0, sz - 1);
+	PrintArray(a, sz);
+}
+void testradixsort() {
+	int a[] = { 278,109,63,930,589,184,505,269,8,83 };
+	int sz = sizeof(a) / sizeof(a[0]);
+	RadixSort(a, 0, sz - 1);
+	PrintArray(a, sz);
+	
+}
 int main() {
 	testinsert();
 	testshell();
@@ -48,5 +62,7 @@ int main() {
 	testheap();
 	testbubble();
 	testquick();
+	testquicknonr();
+	testradixsort();
 	return 0;
 }

@@ -28,3 +28,9 @@ void QuickSortNonR(int* a, int left, int right);
 void _MergeSort(int* a, int left, int right,int* tmp);
 
 void MergeSort(int* a, int left, int right);
+
+void MergeSortNonR(int* a, int n, int* tmp);
+
+void CountSort(int* a, int n);
+
+void RadixSort(int* a, int left, int right);

@@ -4,8 +4,8 @@
 #include<assert.h>
 #include<stdlib.h>
 
-typedef struct BinaryTreeNode* QueueDataType;
-
+//typedef struct BinaryTreeNode* QueueDataType;
+typedef int QueueDataType;
 
 typedef struct QueueNode {
 	struct QueueNode* next;

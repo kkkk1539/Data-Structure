@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"Sort.h"
 #include"Stack.h"
+#include"Queue.h"
 extern void swap(int*, int*);
 void PrintArray(int* a, int n) {
 	assert(a);
@@ -88,6 +89,7 @@ void AdjustDown(int* a, int parent,int size) {
 		}
 	}
 }
+
 void HeapSort(int* a, int n) {
 	for (int i = (n - 1) / 2; i >= 0; i--) {
 		AdjustDown(a, i, n);
@@ -218,13 +220,13 @@ void QuickSortNonR(int* a, int left, int right) {
 		int start = STTop(&st);
 		STPop(&st);
 		int keyi = PartSort3(a, start, end);
-		if (keyi + 1 < end) {
-			STPush(&st, keyi + 1);
-			STPush(&st, end);
-		}
 		if (start < keyi - 1) {
 			STPush(&st, start);
 			STPush(&st, keyi - 1);
+		}
+		if (keyi + 1 < end) {
+			STPush(&st, keyi + 1);
+			STPush(&st, end);
 		}
 	}
 	STDestory(&st);
@@ -265,4 +267,117 @@ void MergeSort(int* a, int n) {
 	}
 	_MergeSort(a, 0, n - 1, tmp);
 	free(tmp);
+}
+
+void MergeSortNonR(int* a, int n,int* tmp) {
+	int gap = 1;
+	while (gap < n) {
+		for (int i = 0; i < n; i = i + 2 * gap) {
+			int begin1 = i, begin2 = i + gap - 1;
+			int end1 = i + gap, end2 = i + 2 * gap - 1;
+			if (end1 >= n || begin2 >= n) {
+				break;
+			}
+			if (end2 >= n) {
+				end2 = n - 1;
+			}
+			/*if (end1 >= n) {
+				end1 = n - 1;
+				begin2 = n;
+				end2 = n - 1;
+			}
+			if (begin2 >= n) {
+				begin2 = n;
+				end2 = n - 1;
+			}
+			if (end2 >= n) {
+				end2 = begin2;
+			}*/
+			int j = i;
+			while (begin1 <= end1 && begin2 <= end2) {
+				if (a[begin1] < a[begin2]) {
+					tmp[j++] = a[begin1++];
+				}
+				else {
+					tmp[j++] = a[begin2++];
+				}
+			}
+			while (begin1 <= end1) {
+				tmp[j++] = a[begin1];
+			}
+			while (begin2 <= end2) {
+				tmp[j++] = a[begin2];
+			}
+			memcpy(a + i, tmp + i, (end2 - i + 1) * sizeof(int));
+		}
+		/*memcpy(a, tmp, sizeof(int) * n);*/
+		gap *= 2;
+	}
+}
+
+void CountSort(int* a, int n) {
+	int min = a[0];
+	int max = a[0];
+	for (int i = 1; i < n; i++) {
+		if (a[i] > max) {
+			max = a[i];
+		}
+		if (a[i] < min) {
+			min = a[i];
+		}
+	}
+	int* CountA = (int*)calloc(max - min + 1, sizeof(int));
+	if (CountA == NULL) {
+		perror("calloc failed");
+		return;
+	}
+	for (int i = 0; i < n; i++) {
+		CountA[a[i] - min]++;
+	}
+	int index = 0;
+	for (int i = 0; i < max - min; i++) {
+		while (CountA[i]--) {
+			a[index++] = i + min;
+		}
+	}
+	free(CountA);
+}
+
+#define RADIX 10
+#define K 3
+int getkey(int value, int k) {
+	int key = 0;
+	while (k-->=0) {
+		key = value % 10;
+		value /= 10;
+	}
+	return key;
+}
+
+void Distribute(int* a, Queue* queues, int left, int right, int k) {
+	for (int i = 0; i < RADIX; i++) {
+		QueueInit(&queues[i]);
+	}
+	for (int i = left; i <= right; i++) {
+		int key = getkey(a[i], k);
+		QueuePush(&queues[key], a[i]);
+	}
+}
+
+void Collect(int* a,Queue* queues) {
+	int index = 0;
+	for (int i = 0; i < RADIX; i++) {
+		while (!QueueEmpty(&queues[i])) {
+			a[index++] = QueueFront(&queues[i]);
+			QueuePop(&queues[i]);
+		}
+	}
+}
+
+void RadixSort(int* a, int left, int right) {
+	Queue queues[RADIX];
+	for (int i = 0; i < K; i++) {
+		Distribute(a, queues, left, right, i);
+		Collect(a, queues);
+	}
 }
