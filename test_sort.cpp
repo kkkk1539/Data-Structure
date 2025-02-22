@@ -55,14 +55,14 @@ void testradixsort() {
 	PrintArray(a, sz);
 	
 }
-int main() {
-	testinsert();
-	testshell();
-	testselect();
-	testheap();
-	testbubble();
-	testquick();
-	testquicknonr();
-	testradixsort();
-	return 0;
-}
+//int main() {
+//	testinsert();
+//	testshell();
+//	testselect();
+//	testheap();
+//	testbubble();
+//	testquick();
+//	testquicknonr();
+//	testradixsort();
+//	return 0;
+//}
