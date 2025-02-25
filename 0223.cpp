@@ -29,6 +29,9 @@ ListNode* create(int n) {
 
 int ysf(int n, int m) {
     ListNode* phead = create(n);
+    if (!phead) {
+        return -1; 
+    }
     ListNode* cur = phead;
     ListNode* prev = phead;
     //定位前一个节点
@@ -53,4 +56,3 @@ int ysf(int n, int m) {
     free(cur);
     return res;
 }
-
