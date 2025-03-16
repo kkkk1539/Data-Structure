@@ -91,7 +91,7 @@ void AdjustDown(int* a, int parent,int size) {
 }
 
 void HeapSort(int* a, int n) {
-	for (int i = (n - 1) / 2; i >= 0; i--) {
+	for (int i = (n - 1 - 1) / 2; i >= 0; i--) {
 		AdjustDown(a, i, n);
 	}
 	for (int i = 0; i < n - 1; i++) {
@@ -184,8 +184,8 @@ int PartSort3(int* a, int left, int right) {
 	int cur = left + 1;
 	int key = a[prev];
 	while (cur <= right) {
-		if (a[cur] < key) {
-			prev++;
+		if (a[cur] < key&& ++prev) {
+			//prev++;
 			swap(&a[prev], &a[cur]);
 		}
 		cur++;
